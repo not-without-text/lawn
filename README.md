@@ -1,2 +1,0 @@
-# lawn
-random images
