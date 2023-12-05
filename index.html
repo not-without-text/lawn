@@ -25,7 +25,7 @@
         let data = JSON.parse(this.responseText);
         document.title = "lawn - " + data[0][2];
         document.getElementById("name").textContent = data.length + ": " + data[0][2];
-        document.getElementById("image").src = data[0][1];
+        document.getElementById("image").src = "images/" + data[0][1];
         document.getElementById("image").title = data[0][3];
       }
       
