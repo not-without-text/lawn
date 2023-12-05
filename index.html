@@ -1,6 +1,5 @@
 <html>
   <head>
-    <title>lawn - Slash Delimiter</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -21,6 +20,16 @@
         font-size: 2rem;
       }
     </style>
+    <script>
+      function reqListener() {
+        let data = this.responseText;
+      }
+      
+      const req = new XMLHttpRequest();
+      req.addEventListener("load", reqListener);
+      req.open("GET", "list.json");
+      req.send();
+    </script>
   </head>
   <body>
     <h1>lawn</h1>
