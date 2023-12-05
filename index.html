@@ -22,7 +22,11 @@
     </style>
     <script>
       function reqListener() {
-        let data = this.responseText;
+        let data = JSON.parse(this.responseText);
+        document.title = "lawn - " + data[0][2];
+        document.getElementById("name").textContent = data.length + ": " + data[0][2];
+        document.getElementById("image").src = data[0][1];
+        document.getElementById("image").title = data[0][3];
       }
       
       const req = new XMLHttpRequest();
@@ -33,7 +37,7 @@
   </head>
   <body>
     <h1>lawn</h1>
-    <b>1: Slash Delimiter</b>
-    <img src="images/slash_delimiter.png" title='Worcestershire sauce /w[ɵɚ][sʃ]t[əɚ]ʃ(ɑj[əɚ]|ɪ?[əɚː]) s[oɑ]ː?s/ (n.)'>
+    <b id="name">1: Slash Delimiter</b>
+    <img id="image">
   </body>
 </html>
