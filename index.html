@@ -32,6 +32,7 @@
         document.getElementById("name").textContent = data.length + ": " + data[cInd][2];
         document.getElementById("image").src = "images/" + data[cInd][1];
         document.getElementById("image").title = data[cInd][3];
+        document.getElementById("image").alt = data[cInd][3];
       }
       
       const req = new XMLHttpRequest();
