@@ -24,12 +24,14 @@
       }
     </style>
     <script>
+      let cNum = new URL(location.href).searchParams.get("comic")
       function reqListener() {
         let data = JSON.parse(this.responseText);
-        document.title = "lawn - " + data[0][2];
-        document.getElementById("name").textContent = data.length + ": " + data[0][2];
-        document.getElementById("image").src = "images/" + data[0][1];
-        document.getElementById("image").title = data[0][3];
+        let cInd = data.length > cNum ? cNum - 1 : data.length - 1
+        document.title = "lawn - " + data[cInd][2];
+        document.getElementById("name").textContent = data.length + ": " + data[cInd][2];
+        document.getElementById("image").src = "images/" + data[cInd][1];
+        document.getElementById("image").title = data[cInd][3];
       }
       
       const req = new XMLHttpRequest();
