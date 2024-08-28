@@ -28,7 +28,7 @@
       let data
       function reqListener() {
         data = JSON.parse(this.responseText);
-        let cInd = data.length > cNum ? cNum - 1 : data.length - 1
+        let cInd = data.length > cNum && cNum > 0 ? cNum - 1 : data.length - 1
         document.title = "lawn - " + data[cInd][2];
         document.getElementById("name").textContent = (cInd + 1) + ": " + data[cInd][2];
         document.getElementById("image").src = "images/" + data[cInd][1];
