@@ -22,6 +22,12 @@
       #name {
         font-weight: bold;
       }
+      a.comic {
+        border-color: #dadef5;
+        border-width: 10px;
+        border-radius: 5px;
+        border-style: solid;
+      }
     </style>
     <script>
       let cNum = new URL(location.href).searchParams.get("comic")
@@ -34,6 +40,16 @@
         document.getElementById("image").src = "images/" + data[cInd][1];
         document.getElementById("image").title = data[cInd][3];
         document.getElementById("image").alt = data[cInd][3];
+        if (cInd === 0) {
+          document.getElementById("prev").disabled = true;
+        } else {
+          document.getElementById("prev").href = window.location.origin + window.location.pathname + "?comic=" + cInd;
+        }
+        if (cInd === data.length-1) {
+          document.getElementById("next").disabled = true;
+        } else {
+          document.getElementById("next").href = window.location.origin + window.location.pathname + "?comic=" + (cInd + 2);
+        }
       }
       
       const req = new XMLHttpRequest();
@@ -45,6 +61,8 @@
   <body>
     <h1>lawn</h1>
     <p id="name"></p>
+    <a class="comic" id="prev">previous</a>
+    <a class="comic" id="next">next</a>
     <img id="image">
   </body>
 </html>
