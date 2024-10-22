@@ -11,5 +11,19 @@
     "bloom_filter.png",
     "Bloom Filter",
     "It's supposed to compress the data, but my image size just got MUCH larger for some reason."
+  ],
+  
+  [
+    "2024-10-18",
+    "dvorak.png",
+    "Dvořák",
+    "For \"ghoti\"-style spellings, you can also try ˜ for /j/ (Nina vs La Niña)."
+  ],
+  
+  [
+    "2024-10-21",
+    "symbological_analysis.png",
+    "Symbological Analysis",
+    "When I first saw the full IPA consonant chart, I wondered why you couldn't write the implosives (voiced) as /bʼ dʼ ɡʼ/ just like the ejectives (voiceless)."
   ]
 ]
